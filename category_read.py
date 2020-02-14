@@ -36,6 +36,9 @@ def get_category_map(url, cate_rank):
         cp_cate = row[cp_cate_index].value  # cp分类
         dk_cate_id = row[dk_cate_id_index].value  # 多看分类id
         dk_cate = row[dk_cate_index].value   # 多看分类
+        if not all((cp_cate, dk_cate_id, dk_cate)):
+            print 'error'
+            continue
         channel = 2 if len(dk_cate) > 2 else 1
         category = "u'" + str(cp_cate) + "': [" + str(channel) + ", [25000000, " +\
                        str(dk_cate_id) + "], [u'免费', u'" + dk_cate + "']]," + "\n"
@@ -49,9 +52,15 @@ def get_category_map(url, cate_rank):
 
 
 if __name__ == "__main__":
-    url = '/Users/zhouyikai/Downloads/落尘分类映射表.xlsx'
-    cate_rank = 2  # 用cp的1级还是2级分类做映射
+    url = '/Users/zhouyikai/Downloads/火眼分类映射表.xlsx'
+    cate_rank = 1  # 用cp的1级还是2级分类做映射
     get_category_map(url, cate_rank)
 
+"""
+        'book_info': '',
+        'book_list': '',
+        'chapter_list': '',
+        'chapter_info': '',
 
+"""
 
