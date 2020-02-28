@@ -52,7 +52,7 @@ def get_category_map(url, cate_rank):
 
 
 if __name__ == "__main__":
-    url = '/Users/zhouyikai/Downloads/火眼分类映射表.xlsx'
+    url = '/Users/zhouyikai/Downloads/青果分类映射表.xlsx'
     cate_rank = 1  # 用cp的1级还是2级分类做映射
     get_category_map(url, cate_rank)
 
@@ -64,3 +64,12 @@ if __name__ == "__main__":
 
 """
 
+"""
+                local_latest_chapter = x['latest'].split()[-1]
+                midu_latest_chapter = midu_fiction_chapters[-1]['title'].split()[-1]
+                if local_latest_chapter == midu_latest_chapter:
+                    data.append('否')
+                else:
+                    data.append('是')
+
+"""
